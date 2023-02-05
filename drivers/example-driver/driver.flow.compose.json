@@ -1,0 +1,22 @@
+{
+  "triggers": [
+    {
+      "id": "action-executed",
+      "title": {
+        "en": "Action Executed"
+      },
+      "tokens": [
+        {
+          "type": "number",
+          "name": "temp",
+          "title": {
+            "en": "temp"
+          },
+          "example": {
+            "en": "37"
+          }
+        }
+      ]
+    }
+  ]
+}

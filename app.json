@@ -1,0 +1,90 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.monkeysoft.memory",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Example Application"
+  },
+  "description": {
+    "en": "Example Application for memory issues"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Stèphan Eizinga",
+    "email": "stephan@monkeysoft.nl"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "action-executed",
+        "title": {
+          "en": "Action Executed"
+        },
+        "tokens": [
+          {
+            "type": "number",
+            "name": "temp",
+            "title": {
+              "en": "temp"
+            },
+            "example": {
+              "en": "37"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=example-driver"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Example Driver"
+      },
+      "class": "sensor",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [],
+      "images": {
+        "small": "/drivers/example-driver/assets/images/small.png",
+        "large": "/drivers/example-driver/assets/images/large.png",
+        "xlarge": "/drivers/example-driver/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_clients",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_clients"
+          }
+        },
+        {
+          "id": "add_clients",
+          "template": "add_devices"
+        }
+      ],
+      "id": "example-driver"
+    }
+  ]
+}
